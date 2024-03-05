@@ -6,6 +6,7 @@ public class HotelDemo {
         System.out.println("How many rooms would you like this Hotel to have?");
         int hotelRoomCount = keyboard.nextInt();
         System.out.println();
+        //Hotel hotel = new Hotel(hotelRoomCount, name);
 
     }
     public void hotelRun(Scanner keyboard){
@@ -16,7 +17,7 @@ public class HotelDemo {
                 ---------
                 1: View all rooms.
                 2: Reserve a room.
-                3: Unreserve a room.
+                3: Un-reserve a room.
                 4: Change current user.
                 5: Exit simulation.
                 Choice: \n
@@ -32,9 +33,10 @@ public class HotelDemo {
                     Hotel.updateName();
                 }if (userInput == 5){
                     break;
-                }
+                } else {
                 System.out.println("This is not an option...");
                 return;
+            }
         }
     }
 }
