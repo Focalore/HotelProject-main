@@ -21,7 +21,6 @@ public class Hotel {
         } else {
             for (Room room : rooms) {
                 if ( userRoomNumber == room.number) {
-                    System.out.println(rooms[userRoomNumber]);
                     room.reserved(currentUser);
                     break;
                 }
@@ -29,8 +28,9 @@ public class Hotel {
         }
     }
 
-    public void unReserveRoom(Scanner Keyboard, int roomCount) {
+    public void unReserveRoom(Scanner Keyboard) {
         System.out.println("What room number would you like to un-reserve?");
+        System.out.println();
         int userRoomNumber = Keyboard.nextInt();
         if ( userRoomNumber > rooms.length) {
             System.out.println("This room number does not exist");
@@ -38,7 +38,6 @@ public class Hotel {
         } else {
             for (Room room : rooms) {
                 if ( userRoomNumber == room.number) {
-                    System.out.println(rooms[userRoomNumber]);
                     room.unreserved(currentUser);
                     break;
                 }
@@ -53,7 +52,9 @@ public class Hotel {
     }
 
     public void updateName(Scanner keyboard){
+        System.out.println();
         System.out.println("What is your name?");
+        System.out.println();
         currentUser = keyboard.nextLine();
     }
 }

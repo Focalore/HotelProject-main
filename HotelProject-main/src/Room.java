@@ -17,21 +17,21 @@ public class Room {
             }
             reserved = true;
             owner = newOwner;
-            System.out.println("your reservation is complete, enjoy your stay in room" + number);
+            System.out.println("your reservation is complete, enjoy your stay in room " + number);
         }
     }
     public void unreserved(String newOwner) {
             if (reserved) {
-                if (owner.equals(newOwner)) {
-                    System.out.println("Would you like to un-reserve this room?");
-                    System.out.println("Y/N");
-                    String userAnswer = keyboard.next();
-                    if (userAnswer.toLowerCase().equals("Y")) {
+                System.out.println("Would you like to un-reserve this room?");
+                System.out.println("Y/N");
+                String userAnswer = keyboard.next();
+                if (userAnswer.equalsIgnoreCase("y")) {
+                    if (owner.equals(newOwner)) {
                         owner = "N/A";
                         reserved = false;
+                        System.out.println("This room has been un-reserved");
                         return;
                         } return;
-
                     }
                 System.out.println("You do not own this room.");
                 return;
@@ -39,7 +39,7 @@ public class Room {
             System.out.println("This room is not reserved and therefor can not be un-reserved.");
             return;
             }
-    public void printInfo() {
-        System.out.println(owner + number + reserved);
+    public void printInfo() { //TODO FORMATTING
+        System.out.print("Room number " + number + " Room owner " + owner + " Resereved? " + reserved );
     }
 }
